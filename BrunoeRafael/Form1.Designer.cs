@@ -34,6 +34,10 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAlterar = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
@@ -47,10 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblVenda = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +112,31 @@
             this.dgvProdutos.Size = new System.Drawing.Size(521, 210);
             this.dgvProdutos.TabIndex = 5;
             this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
+            // 
+            // produto
+            // 
+            this.produto.HeaderText = "Produto";
+            this.produto.Name = "produto";
+            this.produto.ReadOnly = true;
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            this.quantidade.ReadOnly = true;
+            // 
+            // valorUnitario
+            // 
+            this.valorUnitario.HeaderText = "V.Unitário";
+            this.valorUnitario.Name = "valorUnitario";
+            this.valorUnitario.ReadOnly = true;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Visible = false;
             // 
             // txtAlterar
             // 
@@ -228,34 +253,9 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Location = new System.Drawing.Point(437, 560);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblTotal.Size = new System.Drawing.Size(30, 13);
             this.lblTotal.TabIndex = 20;
-            this.lblTotal.Text = "0";
-            // 
-            // produto
-            // 
-            this.produto.HeaderText = "Produto";
-            this.produto.Name = "produto";
-            this.produto.ReadOnly = true;
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            this.quantidade.ReadOnly = true;
-            // 
-            // valorUnitario
-            // 
-            this.valorUnitario.HeaderText = "V.Unitário";
-            this.valorUnitario.Name = "valorUnitario";
-            this.valorUnitario.ReadOnly = true;
-            // 
-            // total
-            // 
-            this.total.HeaderText = "total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Visible = false;
+            this.lblTotal.Text = "R$ 0";
             // 
             // Form1
             // 

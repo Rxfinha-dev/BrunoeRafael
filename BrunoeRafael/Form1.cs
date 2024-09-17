@@ -50,8 +50,7 @@ namespace BrunoeRafael
         {
             if (dgvProdutos.RowCount > 0)
             {   
-                double remover = double.Parse(dgvProdutos.CurrentRow.Cells["total"].Value.ToString());
-
+                double remover = double.Parse(dgvProdutos.CurrentRow.Cells[1].Value.ToString()) * double.Parse(dgvProdutos.CurrentRow.Cells[2].Value.ToString());
 
                 dgvProdutos.Rows.RemoveAt(dgvProdutos.CurrentRow.Index); 
                 valorTotal -= remover;
@@ -67,7 +66,7 @@ namespace BrunoeRafael
         {
             if (dgvProdutos.RowCount > 0)
             {
-                txtAlterar.Text = dgvProdutos.CurrentRow.Cells["quantidade"].Value.ToString();
+                txtAlterar.Text = dgvProdutos.CurrentRow.Cells[1].Value.ToString();
          
 
             }
@@ -84,7 +83,7 @@ namespace BrunoeRafael
 
                 valorTotal = (valorTotal - tot) + ago;
 
-                lblTotal.Text = valorTotal.ToString();
+                lblTotal.Text = valorTotal.ToString("C");
 
                 txtAlterar.Clear();
           
@@ -98,7 +97,9 @@ namespace BrunoeRafael
         {
             vendas += 1;
             lblVenda.Text = vendas.ToString();
-            lblTotal.Text = "0";
+            lblTotal.Text = "R$ 0";
+            valorTotal = 0;
+            
 
             dgvProdutos.Rows.Clear();
             txtAlterar.Clear();
@@ -112,7 +113,11 @@ namespace BrunoeRafael
         {
             dgvProdutos.Rows.Clear();
             txtAlterar.Clear();
-            lblTotal.Text = "0";
+            lblTotal.Text = "R$ 0";
+         
+            valorTotal = 0;
         }
+
+      
     }
 }
